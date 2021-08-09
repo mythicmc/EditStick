@@ -1,0 +1,23 @@
+name: EditStick
+version: 1.0.0
+main: org.sanguineous.editstick.EditStick
+api-version: 1.16
+description: Debug stick-like tool to rotate and flip blocks, with permissions
+softdepend:
+  - PlotSquared
+commands:
+  givestick:
+    description: Gives the player the edit stick
+    permission: editstick.give
+permissions:
+  editstick.*:
+    default: op
+    children:
+      - editstick.give
+      - editstick.use
+  editstick.give:
+    default: op
+    description: permission for /givestick
+  editstick.use:
+    default: op
+    description: permission to use the edit stick
