@@ -1,8 +1,8 @@
-package org.sanguineous.editstick;
+package org.mythicmc.editstick;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import org.sanguineous.editstick.command.GiveStickCommand;
-import org.sanguineous.editstick.listener.PlayerInteractListener;
+import org.mythicmc.editstick.command.GiveStickCommand;
+import org.mythicmc.editstick.listener.PlayerInteractListener;
 
 public class EditStick extends JavaPlugin {
 

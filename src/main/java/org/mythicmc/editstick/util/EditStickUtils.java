@@ -1,4 +1,4 @@
-package org.sanguineous.editstick.util;
+package org.mythicmc.editstick.util;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;

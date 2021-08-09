@@ -1,4 +1,4 @@
-package org.sanguineous.editstick.command;
+package org.mythicmc.editstick.command;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.sanguineous.editstick.util.EditStickUtils;
+import org.mythicmc.editstick.util.EditStickUtils;
 
 public class GiveStickCommand implements CommandExecutor {
 

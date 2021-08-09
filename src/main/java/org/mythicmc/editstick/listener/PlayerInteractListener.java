@@ -1,4 +1,4 @@
-package org.sanguineous.editstick.listener;
+package org.mythicmc.editstick.listener;
 
 import com.plotsquared.core.location.Location;
 import com.plotsquared.core.plot.Plot;
@@ -9,8 +9,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.sanguineous.editstick.util.BlockUtils;
-import org.sanguineous.editstick.util.EditStickUtils;
+import org.mythicmc.editstick.util.BlockUtils;
+import org.mythicmc.editstick.util.EditStickUtils;
 
 public class PlayerInteractListener implements Listener {
     @EventHandler

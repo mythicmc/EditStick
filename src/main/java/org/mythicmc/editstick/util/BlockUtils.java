@@ -1,4 +1,4 @@
-package org.sanguineous.editstick.util;
+package org.mythicmc.editstick.util;
 
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
