@@ -23,7 +23,7 @@ public class PlayerInteractListener implements Listener {
                 Block block = e.getClickedBlock();
                 if (Bukkit.getPluginManager().getPlugin("PlotSquared") != null &&
                         p.hasPermission("editstick.use")) {
-                    Location location = new Location(p.getWorld().getName(), block.getX(),
+                    Location location = Location.at(p.getWorld().getName(), block.getX(),
                             block.getY(), block.getZ());
                     if (location.isUnownedPlotArea()) {
                         if (location.isPlotRoad() && (p.hasPermission("plots.admin.build.road")) ||

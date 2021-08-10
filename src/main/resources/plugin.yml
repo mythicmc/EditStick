@@ -6,7 +6,7 @@ description: Debug stick-like tool to rotate and flip blocks, with permissions
 softdepend:
   - PlotSquared
 commands:
-  givestick:
+  editstick:
     description: Gives the player the edit stick
     permission: editstick.give
 permissions:

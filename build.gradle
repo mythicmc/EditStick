@@ -18,5 +18,6 @@ repositories {
 
 dependencies {
     compileOnly "com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT"
-    compileOnly "com.plotsquared:PlotSquared-Core:5.13.11" // PlotSquared Core API
+    compileOnly "com.plotsquared:PlotSquared-Core:6.0.8-SNAPSHOT" // PlotSquared Core API
+    compileOnly "com.sk89q.worldedit:worldedit-core:7.2.5"
 }
