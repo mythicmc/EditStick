@@ -1,5 +1,5 @@
 name: EditStick
-version: 1.0.0
+version: 1.1.0
 main: org.mythicmc.editstick.EditStick
 api-version: 1.16
 description: Debug stick-like tool to rotate and flip blocks, with permissions
