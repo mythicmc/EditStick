@@ -52,24 +52,23 @@ public class BlockUtils {
 
     public static void changeHalf(Block block){
         BlockData blockData = block.getBlockData();
-        if(blockData instanceof Slab){
+        if (blockData instanceof Slab) {
             Slab slab = (Slab) blockData;
             Slab.Type type = slab.getType();
-            if(type == Slab.Type.BOTTOM){
+            if (type == Slab.Type.BOTTOM) {
                 slab.setType(Slab.Type.TOP);
-            } else if(type == Slab.Type.TOP){
+            } else if (type == Slab.Type.TOP)
                 slab.setType(Slab.Type.BOTTOM);
             }
             block.setBlockData(slab);
-        }
-
-        if(blockData instanceof Bisected){
+        } else if (blockData instanceof Bisected) {
             Bisected bisect = (Bisected) blockData;
             Bisected.Half half = bisect.getHalf();
-            if(half == Bisected.Half.TOP)
+            if (half == Bisected.Half.TOP) {
                 bisect.setHalf(Bisected.Half.BOTTOM);
-            else if(half == Bisected.Half.BOTTOM)
+            } else if (half == Bisected.Half.BOTTOM) {
                 bisect.setHalf(Bisected.Half.TOP);
+            }
             block.setBlockData(bisect);
         }
     }
