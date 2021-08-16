@@ -57,7 +57,7 @@ public class BlockUtils {
             Slab.Type type = slab.getType();
             if (type == Slab.Type.BOTTOM) {
                 slab.setType(Slab.Type.TOP);
-            } else if (type == Slab.Type.TOP)
+            } else if (type == Slab.Type.TOP) {
                 slab.setType(Slab.Type.BOTTOM);
             }
             block.setBlockData(slab);

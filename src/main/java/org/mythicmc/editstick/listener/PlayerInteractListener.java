@@ -14,7 +14,7 @@ import org.mythicmc.editstick.util.EditStickUtils;
 public class PlayerInteractListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e) {
-        if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.LEFT_CLICK_BLOCK) {
             Player p = e.getPlayer();
             if (p.isOp())
                 return;
@@ -25,32 +25,17 @@ public class PlayerInteractListener implements Listener {
                     Location location = Location.at(p.getWorld().getName(), block.getX(),
                             block.getY(), block.getZ());
                     if (EditStickUtils.canBuild(p, location)) {
+                        if (e.getAction() == Action.RIGHT_CLICK_BLOCK)
+                            BlockUtils.rotateBlock(block);
+                        else
+                            BlockUtils.changeHalf(block);
+                        e.setCancelled(true);
+                    }
+                } else if (p.hasPermission("editstick.use")) {
+                    if (e.getAction() == Action.RIGHT_CLICK_BLOCK)
                         BlockUtils.rotateBlock(block);
-                        e.setCancelled(true);
-                    }
-                } else if (p.hasPermission("editstick.use")) {
-                    BlockUtils.rotateBlock(block);
-                    e.setCancelled(true);
-                }
-            }
-        }
-
-        else if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
-            Player p = e.getPlayer();
-            if (p.isOp())
-                return;
-            if (EditStickUtils.isEditStick(p.getInventory().getItemInMainHand())) {
-                Block block = e.getClickedBlock();
-                if (Bukkit.getPluginManager().getPlugin("PlotSquared") != null &&
-                        p.hasPermission("editstick.use")) {
-                    Location location = Location.at(p.getWorld().getName(), block.getX(),
-                            block.getY(), block.getZ());
-                    if(EditStickUtils.canBuild(p, location)){
+                    else
                         BlockUtils.changeHalf(block);
-                        e.setCancelled(true);
-                    }
-                } else if (p.hasPermission("editstick.use")) {
-                    BlockUtils.changeHalf(block);
                     e.setCancelled(true);
                 }
             }
