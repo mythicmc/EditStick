@@ -28,9 +28,9 @@ public class BlockUtils {
                 } else {
                     directional.setFacing(BlockFace.NORTH);
                 }
-            } else if(face == BlockFace.UP){
+            } else if (face == BlockFace.UP) {
                 directional.setFacing(BlockFace.DOWN);
-            } else if(face == BlockFace.DOWN){
+            } else if (face == BlockFace.DOWN) {
                 directional.setFacing((BlockFace.NORTH));
             }
             block.setBlockData(directional);
