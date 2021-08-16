@@ -24,7 +24,7 @@ public class PlayerInteractListener implements Listener {
                         p.hasPermission("editstick.use")) {
                     Location location = Location.at(p.getWorld().getName(), block.getX(),
                             block.getY(), block.getZ());
-                    if(EditStickUtils.canBuild(p, location)){
+                    if (EditStickUtils.canBuild(p, location)) {
                         BlockUtils.rotateBlock(block);
                         e.setCancelled(true);
                     }
