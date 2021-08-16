@@ -23,7 +23,7 @@ public class BlockUtils {
             } else if (face == BlockFace.SOUTH) {
                 directional.setFacing(BlockFace.WEST);
             } else if (face == BlockFace.WEST) {
-                if(directional.getFaces().contains(BlockFace.UP)){
+                if (directional.getFaces().contains(BlockFace.UP)) {
                     directional.setFacing(BlockFace.UP);
                 } else {
                     directional.setFacing(BlockFace.NORTH);
