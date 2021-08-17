@@ -21,7 +21,7 @@ public class PlayerInteractListener implements Listener {
             if (EditStickUtils.isEditStick(p.getInventory().getItemInMainHand())) {
                 Block block = e.getClickedBlock();
                 if (Bukkit.getPluginManager().getPlugin("PlotSquared") != null &&
-                        p.hasPermission("editstick.use")) {
+                        p.hasPermission("editstick.use") && !EditStickUtils.isBlacklisted(block)) {
                     Location location = Location.at(p.getWorld().getName(), block.getX(),
                             block.getY(), block.getZ());
                     if (EditStickUtils.canBuild(p, location)) {
@@ -31,7 +31,7 @@ public class PlayerInteractListener implements Listener {
                             BlockUtils.changeHalf(block);
                         e.setCancelled(true);
                     }
-                } else if (p.hasPermission("editstick.use")) {
+                } else if (p.hasPermission("editstick.use") && !EditStickUtils.isBlacklisted(block)) {
                     if (e.getAction() == Action.RIGHT_CLICK_BLOCK)
                         BlockUtils.rotateBlock(block);
                     else

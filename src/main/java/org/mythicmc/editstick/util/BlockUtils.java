@@ -13,8 +13,7 @@ public class BlockUtils {
     public static void rotateBlock(Block block) {
         BlockData blockData = block.getBlockData();
         //-- Change "Facing"
-        if (blockData instanceof Directional) {
-            Directional directional = (Directional) blockData;
+        if (blockData instanceof Directional directional) {
             BlockFace face = directional.getFacing();
             if (face == BlockFace.NORTH) {
                 directional.setFacing(BlockFace.EAST);
@@ -36,8 +35,7 @@ public class BlockUtils {
             block.setBlockData(directional);
         }
         //-- Change "Axis"
-        else if (blockData instanceof Orientable) {
-            Orientable orientation = (Orientable) blockData;
+        else if (blockData instanceof Orientable orientation) {
             Axis axis = orientation.getAxis();
             if (axis == Axis.X) {
                 orientation.setAxis(Axis.Y);
@@ -50,10 +48,9 @@ public class BlockUtils {
         }
     }
 
-    public static void changeHalf(Block block){
+    public static void changeHalf(Block block) {
         BlockData blockData = block.getBlockData();
-        if (blockData instanceof Slab) {
-            Slab slab = (Slab) blockData;
+        if (blockData instanceof Slab slab) {
             Slab.Type type = slab.getType();
             if (type == Slab.Type.BOTTOM) {
                 slab.setType(Slab.Type.TOP);
@@ -61,8 +58,7 @@ public class BlockUtils {
                 slab.setType(Slab.Type.BOTTOM);
             }
             block.setBlockData(slab);
-        } else if (blockData instanceof Bisected) {
-            Bisected bisect = (Bisected) blockData;
+        } else if (blockData instanceof Bisected bisect) {
             Bisected.Half half = bisect.getHalf();
             if (half == Bisected.Half.TOP) {
                 bisect.setHalf(Bisected.Half.BOTTOM);
