@@ -53,15 +53,18 @@ public class EditStickUtils {
         return false;
     }
 
-    public static boolean isBlacklisted(Block b) {
-
-        if (b.getBlockData() instanceof Door)
-            return true;
-        else if (b.getBlockData() instanceof Bed)
+    public static boolean isOrientBlacklisted(Block b) {
+        if (b.getBlockData() instanceof Bed)
             return true;
         else if (b.getBlockData() instanceof Chest c && c.getType() != Chest.Type.SINGLE)
             return true;
 
+        return false;
+    }
+
+    public static boolean isBisectBlacklisted(Block b) {
+        if (b.getBlockData() instanceof Door)
+            return true;
         return false;
     }
 }
